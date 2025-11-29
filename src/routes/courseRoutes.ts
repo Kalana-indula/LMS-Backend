@@ -1,23 +1,9 @@
 import express from "express";
-// import multer from "multer";
-import {getCourse, listCourses} from "../controller/courseController";
+import {getCourse, listCourses} from "../controllers/courseController";
 
-// import { requireAuth } from "@clerk/express";
-
-const router = express.Router();
-// const upload = multer({ storage: multer.memoryStorage() });
+const router=express.Router();
 
 router.get("/", listCourses);
-// router.post("/", requireAuth(), createCourse);
-
-router.get("/:courseId", getCourse);
-// router.put("/:courseId", requireAuth(), upload.single("image"), updateCourse);
-// router.delete("/:courseId", requireAuth(), deleteCourse);
-
-// router.post(
-//     "/:courseId/sections/:sectionId/chapters/:chapterId/get-upload-url",
-//     requireAuth(),
-//     getUploadVideoUrl
-// );
+router.get("/:courseId",getCourse);
 
 export default router;
